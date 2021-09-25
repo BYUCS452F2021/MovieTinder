@@ -1,0 +1,24 @@
+Users (userName, userId, host, groupId)
+	foreign key: groupId references Services, Genre, and Year
+	primary key userId
+Services (groupId, netflix, Hulu, Disney plus, Amazon Prime, HBO max)
+	primary key: groupId
+Genre (groupId, Action, adventure, comedy, drama, fantasy, romantic, sci-fi, western)
+	primary key: groupId
+Year (groupId, all, 2020s, 2010s, 2000s, 1990s, 1980s, old)
+	primary key: groupId
+
+The users table is used to identify each user with their group. The group has a set of preferences that will apply to each user experience.
+	userName contains the name of the user
+	userID is used to identify unique users
+	host is a boolean that gives the user more privileges 
+	groupId is used to identify which group the user pertains to
+The services table is used to identify the streaming service preference of the group. Each column will have the name of a streaming service and a binary value for booleans.
+	groupId is used to connect preferences of services with each group
+	every other column is binary for if it will be used or not
+The genre table is exactly like the services table but for representing the preferences of genres for each group.
+	groupId is used to connect preferences of genres with each group
+	every other column is binary for if it will be used or not
+The year table is exactly like the services table but for representing the preferences of years for each group.
+	groupId is used to connect preferences of years with each group
+	every other column is binary for if it will be used or not
