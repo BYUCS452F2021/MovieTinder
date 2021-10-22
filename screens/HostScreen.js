@@ -7,6 +7,7 @@ import { createMovieGroup } from '../repositories/apiRepository';
 import { retrieveMovieListWithSelections } from '../repositories/movieDbRepository';
 
 export const HostScreen = ({ route, navigation }) => {
+
 	const [genreList, setGenreList] = useState(route.params.genreList);
 	const [users, setUsers] = useState([
 		{ id: 1, name: 'Daddy', host: false },
@@ -16,9 +17,8 @@ export const HostScreen = ({ route, navigation }) => {
 		{ id: 5, name: 'tom', host: false },
 		{ id: 6, name: 'carl', host: false },
 		{ id: 7, name: 'mommy', host: false },
-		{ id: 8, name: 'dingus', host: false },
-		{ id: 9, name: 'nugget', host: false },
 	]);
+	
 	const [streamingServices, setStreamingServices] = useState([
 		{ id: 1, service: 'Netflix', selected: false },
 		{ id: 2, service: 'Hulu', selected: false },
@@ -33,7 +33,6 @@ export const HostScreen = ({ route, navigation }) => {
 		{ id: 4, year: '1990-1999', selected: false },
 		{ id: 5, year: 'All', selected: false },
 	]);
-	const [adultMoviesOnly, setAdultMoviesOnly] = useState(false);
 	const [loadingOverlay, setLoadingOverlay] = useState(false);
 
 	const generateGropCode = async () => {
@@ -52,6 +51,7 @@ export const HostScreen = ({ route, navigation }) => {
 	};
 
 	const selectGenre = genre => {
+		console.log(111, genreList);
 		let genres = [...genreList];
 		for (let i = 0; i < genres.length; i++) {
 			if (genres[i].id === genre.id) {
@@ -98,16 +98,16 @@ export const HostScreen = ({ route, navigation }) => {
 		};
 		console.log(movieGroupSettings);
 		createMovieGroup(movieGroupSettings);
-		// retriveInitialData(movieGroupSettings);
+		retriveInitialData(movieGroupSettings);
 		navigation.navigate('SettingsScreen', { data: movieGroupSettings });
 	};
 
 	const retriveInitialData = async movieGroupSettings => {
 		let movieListObj = await retrieveMovieListWithSelections(movieGroupSettings);
 		if (movieListObj.success && movieListObj.movies.length > 0) {
-			console.log('OBJ', movieListObj);
-			// navigation.navigate('SwipeScreen', { movieListArray: movieListObj.movies });
-			navigation.navigate('SettingsScreen');
+			//console.log('OBJ', movieListObj);
+			navigation.navigate('SwipeScreen', { movieListArray: movieListObj.movies });
+			//navigation.navigate('SettingsScreen');
 		}
 	};
 

@@ -20,7 +20,6 @@ export const MainScreen = ({ navigation }) => {
 		}
 		const userSettings = await AsyncStorage.getItem('@movieTinder:userSettings');
 		let parsedUserSettings = JSON.parse(userSettings);
-		console.log(parsedUserSettings);
 	};
 
 	return (
@@ -34,7 +33,7 @@ export const MainScreen = ({ navigation }) => {
 					<Text style={{ fontSize: 20, color: '#fff' }}>Join</Text>
 				</TouchableOpacity>
 			</View>
-			<Text style={{ color: 'grey' }}>Copyright © 2020 by MovieTinder LLC.</Text>
+			<Text style={{ color: 'grey' }}>Copyright © 2021 by MovieTinder LLC.</Text>
 		</View>
 	);
 };

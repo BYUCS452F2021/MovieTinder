@@ -9,8 +9,9 @@ export const SwipeScreen = ({ route, navigation }) => {
 
 	useEffect(() => {
 		const { movieListArray } = route.params;
+		console.log(movieListArray);
 		setCardsArr(movieListArray);
-		console.log('HERE I AM', route);
+		
 	}, []);
 
 	const getProviders = async movieListArray => {
@@ -53,12 +54,12 @@ export const SwipeScreen = ({ route, navigation }) => {
 									flex: 1,
 									justifyContent: 'center',
 									alignItems: 'center',
-									borderRadius: 4,
+									borderRadius: 0,
 									borderColor: '#E8E8E8',
 									justifyContent: 'center',
 									backgroundColor: 'white',
 								}}>
-								<Image style={{ width: '100%', height: '95%' }} source={{ uri: `https://image.tmdb.org/t/p/original${card.poster_path}` }} />
+								<Image style={{ width: '90%', height: '90%' }} source={{ uri: `https://image.tmdb.org/t/p/original${card.poster_path}` }} />
 							</View>
 						);
 					}}

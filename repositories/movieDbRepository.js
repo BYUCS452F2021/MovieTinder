@@ -1,4 +1,4 @@
-const retrieveGenreList = async () => {
+const retrieveGenreList = async () => {	
 	try {
 		const genresArray = await fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.EXPO_API_KEY}&language=en-US`)
 			.then(response => response.json())
