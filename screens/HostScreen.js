@@ -51,7 +51,6 @@ export const HostScreen = ({ route, navigation }) => {
 	};
 
 	const selectGenre = genre => {
-		console.log(111, genreList);
 		let genres = [...genreList];
 		for (let i = 0; i < genres.length; i++) {
 			if (genres[i].id === genre.id) {
@@ -96,7 +95,6 @@ export const HostScreen = ({ route, navigation }) => {
 			genres: [...selectedGenres],
 			code: code,
 		};
-		console.log(movieGroupSettings);
 		createMovieGroup(movieGroupSettings);
 		retriveInitialData(movieGroupSettings);
 		navigation.navigate('SettingsScreen', { data: movieGroupSettings });

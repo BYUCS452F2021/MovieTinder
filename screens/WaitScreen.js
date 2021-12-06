@@ -28,7 +28,7 @@ export const WaitScreen = ({ navigation }) => {
 		<View style={styles.mainContainer}>
 			<Text style={{fontSize: 20, marginTop: 150}}>Waiting for Host to Begin Swipathon</Text>
 
-			<Text style={{ color: 'grey' }}>Copyright © 2020 by MovieTinder LLC.</Text>
+			<Text style={{ color: 'grey' }}>Copyright © 2021 by MovieTinder LLC.</Text>
 		</View>
 	);
 };

@@ -87,7 +87,6 @@ export const JoinScreen = ({ route, navigation }) => {
 	const retriveInitialData = async movieGroupSettings => {
 		let movieListObj = await retrieveMovieListWithSelections(movieGroupSettings);
 		if (movieListObj.success && movieListObj.movies.length > 0) {
-			console.log("OBJ", movieListObj);
 			navigation.navigate('SwipeScreen', { movieListArray: movieListObj.movies });
 		}
 	};

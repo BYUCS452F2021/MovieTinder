@@ -9,7 +9,6 @@ export const SwipeScreen = ({ route, navigation }) => {
 
 	useEffect(() => {
 		const { movieListArray } = route.params;
-		console.log(movieListArray);
 		setCardsArr(movieListArray);
 		
 	}, []);
